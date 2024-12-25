@@ -1,0 +1,118 @@
+/* ===============
+      Colors
+================== */
+:root {
+  --bodyBG: #f5f5f5;
+  --bodyFont: #181212;
+  --fontColor: #9fc5ef;
+  --icon: #40464d;
+  --numberColor:#ed143d;
+  --redButton:#ed143d;
+  --buttonColor :#1976d2;
+  --footer-bg:#181212;
+  --white: #fff;
+}
+/*=================
+    my class 
+  =================*/
+
+.border {
+  border: 2px red solid;
+}
+.flex {
+  display: flex;
+  align-items: center;
+}
+/* =====================
+     General Style
+ ======================== */
+* {
+  margin: 0;
+  padding: 0;
+  user-select: none;
+}
+@import url("https://fonts.googleapis.com/css2?family=Roboto:wght@100;300;400;500;700;900&display=swap");
+
+html {
+  font-family: system-ui, -apple-system, "Roboto", sans-serif;
+  box-sizing: border-box;
+  scroll-behavior: smooth;
+
+}
+main {
+  width: 80%;
+  margin-inline: auto;
+}
+@media (width < 600px ) {
+  main {
+    width: 100%;
+  }
+}
+*,
+*:before,
+*:after {
+  box-sizing: inherit;
+}
+::-webkit-scrollbar {
+  width: 0.88rem;
+}
+
+::-webkit-scrollbar-track {
+  border: 7px solid #292c3b;
+  box-shadow: inset 0 0 2.5px 2px rgba(0, 0, 0, 0.5);
+  border-radius: 4px;
+  background-color: #d4d4d8;
+}
+
+::-webkit-scrollbar-thumb {
+  background: #999;
+  border-radius: 2px;
+}
+
+::-webkit-scrollbar-thumb:hover {
+  background: #555;
+}
+
+/* for Firefox */
+html {
+  scrollbar-color: #9e4673 #3d4a59;
+}
+/* =====================
+      Html Element
+   ===================== */
+.fixed {
+  position: fixed;
+  right: 0;
+  left: 0;
+  background-color: var(--footer-bg);
+  z-index: 11;
+  color: var(--white);
+  & .fa-solid {
+    color: var(--white);
+  }
+}
+   a,
+button {
+  all: unset;
+  display: inline-block;
+  transition: 0.2s;
+}
+button:active,
+a:active {
+  scale: 0.8;
+}
+button:hover,
+a:hover {
+  cursor: pointer;
+}
+button:disabled {
+  opacity: 0.7;
+  cursor: no-drop;
+  scale: 1;
+}
+li {
+  list-style: none;
+}
+.fa-solid {
+  color: var(--icon);
+}

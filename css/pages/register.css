@@ -1,0 +1,44 @@
+.container {    
+    height: 100vh;
+    display: grid;
+    grid-template-rows: auto 1fr auto;
+    align-items: center;
+   
+  
+    & main {
+        text-align: left;
+       max-width: 500px;
+       
+    }
+    
+    & footer {
+        background-color: transparent;
+    }
+}
+header.flex {
+    & a {
+        all: unset;
+    }
+    & a {
+        cursor: pointer;
+    }
+        & .sign, & .register {
+            border: 1px solid var(--bodyFont);
+            padding: 0.44rem 1rem;
+            border-radius: 55px;
+            font-size: 0.8rem;
+            font-weight: 500;
+        }
+  & .register {
+        border: 1px solid var(--white);
+        color: var(--white);
+       }
+       & .fa-solid {
+        color: var(--white);
+       }
+    & .sign:hover, & .register:hover, & .sign:hover .fa-solid, & .register:hover .fa-solid {
+        background-color: var(--bodyFont);
+        color: var(--fontColor);
+    }
+
+   }
