@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="ar" dir="rtl">
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
@@ -13,44 +13,46 @@
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.6.0/css/all.min.css"
     integrity="sha512-Kc323vGBEqzTmouAECnVceyQqyqdsSiqLQISBL29aUW4U/M7pSPA/gEUZQqv1cwx4OnYxTxve5UMg5GT6L4JJg=="
     crossorigin="anonymous" referrerpolicy="no-referrer" />
-    <title>Signin</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Cairo:wght@400;600;700&display=swap" rel="stylesheet">
+  <style>body, * { font-family: 'Cairo', sans-serif; }</style>
+  <title>تسجيل الدخول</title>
 </head>
-<body class=" container text-center text-bg-dark">
+<body class="container text-center text-bg-dark">
   <header class="flex">
     <a href="/index.html" class="logo">
       <i class="fa-solid fa-bag-shopping"></i>
-      <span>Elhadidy</span>
-      <p>shopping</p>
+      <span>الحديدي</span>
+      <p>تسوق</p>
     </a>
     <div class="links">
       <a href="Cart.html" class="cart"><i class="fa-solid fa-cart-shopping"></i>
-        $0.00<span class="proudct-number">2</span>
-        <a href="./signin.html" class="sign"><i class="fa-solid fa-right-to-bracket"></i>Sign in</a>
-        <a href="/pages/register.html" class="register"><i class="fa-solid fa-user-plus"></i>register</a>
+        ج.م 0.00<span class="proudct-number">2</span>
+        <a href="./signin.html" class="sign"><i class="fa-solid fa-right-to-bracket"></i>تسجيل الدخول</a>
+        <a href="/pages/register.html" class="register"><i class="fa-solid fa-user-plus"></i>إنشاء حساب</a>
     </div>
   </header>
 
-  <main class=" px-3">
+  <main class="px-3">
     <form>
       <div class="mb-4">
-        <label for="exampleInputEmail1" class="form-label">Email address</label>
+        <label for="exampleInputEmail1" class="form-label">البريد الإلكتروني</label>
         <input type="email" class="form-control" id="exampleInputEmail1" aria-describedby="emailHelp">
-        <div id="emailHelp" class="form-text">We'll never share your email with anyone else.</div>
+        <div id="emailHelp" class="form-text">لن نشارك بريدك الإلكتروني مع أي طرف آخر.</div>
       </div>
       <div class="mb-4">
-        <label for="exampleInputPassword1" class="form-label">Password</label>
+        <label for="exampleInputPassword1" class="form-label">كلمة المرور</label>
         <input type="password" class="form-control" id="exampleInputPassword1">
       </div>
       <div class="mb-4 form-check">
         <input type="checkbox" class="form-check-input" id="exampleCheck1">
-        <label class="form-check-label" for="exampleCheck1">Check me out</label>
+        <label class="form-check-label" for="exampleCheck1">تذكرني</label>
       </div>
-      <button type="submit" class="btn btn-primary">Sign in</button>
+      <button type="submit" class="btn btn-primary">تسجيل الدخول</button>
     </form>
   </main>
 
-  <footer>Designed and developed by <span>Ahmed_ Elhadidy</span> © 2024 </footer>
-
-</div>
-    </body>
+  <footer>تصميم وتطوير <span>أحمد الحديدي</span> © 2024</footer>
+</body>
 </html>
