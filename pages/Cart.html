@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="ar" dir="rtl">
 <head>
     <meta charset="UTF-8">
     <link rel="shortcut icon" href="/images/bag-shopping-solid.svg" type="image/x-icon">
@@ -11,75 +11,80 @@
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.6.0/css/all.min.css"
     integrity="sha512-Kc323vGBEqzTmouAECnVceyQqyqdsSiqLQISBL29aUW4U/M7pSPA/gEUZQqv1cwx4OnYxTxve5UMg5GT6L4JJg=="
     crossorigin="anonymous" referrerpolicy="no-referrer" />
-    <title>Cart</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Cairo:wght@400;600;700&display=swap" rel="stylesheet">
+    <style>body, * { font-family: 'Cairo', sans-serif; }</style>
+    <title>سلة التسوق</title>
 </head>
 <body>
  <div class="container">
    <header class="flex">
      <a href="/index.html" class="logo">
        <i class="fa-solid fa-bag-shopping"></i>
-       <span>Elhadidy</span>
-       <p>shopping</p>
+       <span>الحديدي</span>
+       <p>تسوق</p>
      </a>
      <div class="links">
        <a href="" class="cart"><i class="fa-solid fa-cart-shopping"></i>
-         $0.00<span class="proudct-number">2</span>
-         <a href="/pages/signin.html" class="sign"><i class="fa-solid fa-right-to-bracket"></i>Sign in</a>
-         <a href="" class="register"><i class="fa-solid fa-user-plus"></i>register</a>
+         ج.م 0.00<span class="proudct-number">2</span>
+         <a href="/pages/signin.html" class="sign"><i class="fa-solid fa-right-to-bracket"></i>تسجيل الدخول</a>
+         <a href="" class="register"><i class="fa-solid fa-user-plus"></i>إنشاء حساب</a>
      </div>
    </header>
   <main>
     <section class="main-cart">
         <article class="proudct flex">
             <button class="delete"><i class="fa-solid fa-trash-can" style="color: #e12323;"></i></button>
-            <span class="price">$133</span>
+            <span class="price">133 ج.م</span>
             <button class="minus"><i class="fa-solid fa-minus" style="color:var(--buttonColor);"></i></button>
             <span class="stock">3</span>
             <button class="plus"><i class="fa-solid fa-plus" style="color:var(--buttonColor);"></i></button>
-            <h1 class="proudct-name">proudct-Name</h1>
+            <h1 class="proudct-name">اسم المنتج</h1>
             <img style="width: 50px;" src="../images/1.png" alt="">
         </article>
         <article class="proudct flex">
             <button class="delete"><i class="fa-solid fa-trash-can" style="color: #e12323;"></i></button>
-            <span class="price">$133</span>
+            <span class="price">133 ج.م</span>
             <button class="minus"><i class="fa-solid fa-minus" style="color:var(--buttonColor);"></i></button>
             <span class="stock">3</span>
             <button class="plus"><i class="fa-solid fa-plus" style="color:var(--buttonColor);"></i></button>
-            <h1 class="proudct-name">proudct-Name</h1>
+            <h1 class="proudct-name">اسم المنتج</h1>
             <img style="width: 50px;" src="../images/2.webp" alt="">
         </article>
         <article class="proudct flex">
             <button class="delete"><i class="fa-solid fa-trash-can" style="color: #e12323;"></i></button>
-            <span class="price">$133</span>
+            <span class="price">133 ج.م</span>
             <button class="minus"><i class="fa-solid fa-minus" style="color:var(--buttonColor);"></i></button>
             <span class="stock">3</span>
             <button class="plus"><i class="fa-solid fa-plus" style="color:var(--buttonColor);"></i></button>
-            <h1 class="proudct-name">proudct-Name</h1>
+            <h1 class="proudct-name">اسم المنتج</h1>
             <img style="width: 50px;" src="../images/3.webp" alt="">
         </article>
         <article class="proudct flex">
             <button class="delete"><i class="fa-solid fa-trash-can" style="color: #e12323;"></i></button>
-            <span class="price">$133</span>
+            <span class="price">133 ج.م</span>
             <button class="minus"><i class="fa-solid fa-minus" style="color:var(--buttonColor);"></i></button>
             <span class="stock">3</span>
             <button class="plus"><i class="fa-solid fa-plus" style="color:var(--buttonColor);"></i></button>
-            <h1 class="proudct-name">proudct-Name</h1>
+            <h1 class="proudct-name">اسم المنتج</h1>
             <img style="width: 50px;" src="../images/4.webp" alt="">
         </article>
     </section>
-    <button class="claer"><i class="fa-solid fa-trash-can" ></i> Claer Cart</button>
+    <button class="claer"><i class="fa-solid fa-trash-can"></i> إفراغ السلة</button>
     <section class="summary">
-        <h1>Cart Summary</h1>
+        <h1>ملخص الطلب</h1>
        <div class="sup flex">
-         <p>sup total</p>
-        <span>$1999</span>
+         <p>المجموع الفرعي</p>
+        <span>1999 ج.م</span>
        </div>
-        <button disabled class=" check">Check out</button>
+        <button disabled class="check">إتمام الشراء</button>
        <a href="../pages/signin.html">
-         <p> please sign in to contnue </p>
+         <p>يرجى تسجيل الدخول للمتابعة</p>
        </a>
     </section>
-  </main>  <footer>Designed and developed by <span>Ahmed_ Elhadidy</span> © 2024 </footer>
- </div class="container">
+  </main>
+  <footer>تصميم وتطوير <span>أحمد الحديدي</span> © 2024</footer>
+ </div>
 </body>
 </html>
