@@ -1,89 +1,130 @@
+/* =====================
+     Header — RTL
+======================== */
 header.flex {
   justify-content: space-between;
   align-items: center;
-  padding-inline: 10%;
-  padding-top: 1.2rem;
+  padding-inline: 8%;
+  padding-block: 1.2rem;
+  flex-wrap: wrap;
+  gap: 0.8rem;
+}
 
-  & .sign {
-    margin-inline: 1rem;
-  }
+/* Logo */
+header.flex .logo {
+  display: flex;
+  align-items: center;
+  gap: 0.4rem;
+}
+header.flex .logo .fa-solid { font-size: 1.1rem; }
+header.flex .logo span { font-weight: bold; font-size: 1.1rem; }
+header.flex .logo p {
+  letter-spacing: 0.1rem;
+  font-weight: 400;
+  font-size: 0.85rem;
+}
 
-  & .sign,
-  .register {
-    padding: 0.44rem 1rem;
-    border: 2px solid var(--bodyFont);
-    border-radius: 20px;
-    font-size: 0.88rem;
-    font-weight: 500;
-  }
-  & .links .fa-solid {
-    margin-right: 0.3rem;
-  }
-  & .sign:hover,
-  .register:hover,
-  .sign:hover .fa-solid,
-  .register:hover .fa-solid {
-    background-color: var(--bodyFont);
-    color: var(--fontColor);
-  }
-  & .cart {
-    position: relative;
-    padding: 0.44rem 1.1rem 0.44rem 0.6rem;
-    background-color: var(--bodyFont);
-    border-radius: 20px;
-    color: var(--fontColor);
-    font-size: 0.9rem;
-    font-weight: 500;
-  }
-  & .cart .fa-solid {
-    color: var(--fontColor);
-  }
-  & .cart .proudct-number {
-    position: absolute;
-    width: 20px;
-    height: 20px;
-    background-color:var(--numberColor);
-    top: -5px;
-    font-size: 0.7rem;
-    font-weight: bold;
-    right: 0;
-    color: var(--bodyBG);
-    border-radius: 50%;
-    display: flex;
-    align-items: center;
+/* Nav links */
+header.flex .links {
+  display: flex;
+  align-items: center;
+  gap: 0.6rem;
+  flex-wrap: wrap;
+}
+header.flex .links .fa-solid {
+  margin-left: 0.3rem;
+  margin-right: 0;
+}
+
+/* Sign in / Register buttons */
+header.flex .sign,
+header.flex .register {
+  padding: 0.44rem 1rem;
+  border: 2px solid var(--bodyFont);
+  border-radius: 20px;
+  font-size: 0.85rem;
+  font-weight: 600;
+  white-space: nowrap;
+}
+header.flex .sign { margin-inline: 0.3rem; }
+
+header.flex .sign:hover,
+header.flex .register:hover {
+  background-color: var(--bodyFont);
+  color: var(--fontColor);
+}
+header.flex .sign:hover .fa-solid,
+header.flex .register:hover .fa-solid {
+  color: var(--fontColor);
+}
+
+/* Cart button */
+header.flex .cart {
+  position: relative;
+  display: flex;
+  align-items: center;
+  gap: 0.3rem;
+  padding: 0.44rem 1.2rem 0.44rem 0.7rem;
+  background-color: var(--bodyFont);
+  border-radius: 20px;
+  color: var(--fontColor);
+  font-size: 0.9rem;
+  font-weight: 600;
+  white-space: nowrap;
+}
+header.flex .cart .fa-solid { color: var(--fontColor); }
+header.flex .cart .proudct-number {
+  position: absolute;
+  width: 20px;
+  height: 20px;
+  background-color: var(--numberColor);
+  top: -6px;
+  left: -6px;
+  right: auto;
+  font-size: 0.7rem;
+  font-weight: bold;
+  color: var(--bodyBG);
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+/* =====================
+     Responsive: Tablet
+======================== */
+@media (max-width: 768px) {
+  header.flex {
+    padding-inline: 4%;
     justify-content: center;
+    gap: 1rem;
   }
-
-  & .logo .fa-solid {
-    font-size: 1rem;
-  }
-  & .logo span {
-    font-weight: bold;
-  }
-  & .logo p {
-    letter-spacing: 0.16rem;
-    font-weight: 400;
+  header.flex .links {
+    justify-content: center;
   }
 }
 
-
-@media( width < 600px){
-    header.flex  {
-        justify-content: center;
-        padding-inline: 0;
-        
-        & .logo .fa-solid, p {
-            display: none;
-        }
-        
-        & .links {
-            display: flex;
-            flex-wrap: wrap;
-            gap: 1rem;
-            margin-left: 10px;
-            justify-content: center;
-        }
-    
-    }
-    }
-
+/* =====================
+     Responsive: Mobile
+======================== */
+@media (max-width: 480px) {
+  header.flex {
+    padding-inline: 2%;
+    flex-direction: column;
+    gap: 0.7rem;
+  }
+  header.flex .logo p { display: none; }
+  header.flex .links {
+    gap: 0.4rem;
+    justify-content: center;
+  }
+  header.flex .sign,
+  header.flex .register {
+    padding: 0.35rem 0.7rem;
+    font-size: 0.78rem;
+  }
+  header.flex .cart {
+    font-size: 0.82rem;
+    padding: 0.35rem 1rem 0.35rem 0.5rem;
+  }
+}
