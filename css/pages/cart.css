@@ -1,136 +1,160 @@
-/* =====================
-     Cart Page Layout
-======================== */
 .container {
   min-height: 100vh;
   display: grid;
   grid-template-rows: auto 1fr auto;
   background-color: var(--bodyBG);
+
+  & header {
+    background-color: var(--bodyFont);
+    color: var(--white);
+    padding-block: 0.7rem;
+  }
+  & .fa-solid { color: var(--white); }
+  & main { text-align: center; padding-bottom: 2rem; }
+
+  & .sign:hover,
+  .register:hover {
+    border: 1px solid rgb(152,154,189);
+    padding: .5rem 1.1rem;
+    background-color: var(--fontColor);
+  }
+  & .cart:hover {
+    border: 1px solid rgb(152,154,189);
+    padding: 0.5rem 1.1rem 0.5rem 0.7rem;
+  }
+  & .logo:hover { cursor: pointer; scale: 0.9; }
 }
 
-.container header {
-  background-color: var(--bodyFont);
-  color: var(--white);
-  padding-block: 0.6rem;
+.cart-page-title {
+  font-family: 'Cairo', sans-serif;
+  font-size: 1.4rem;
+  margin: 1.5rem auto 1rem;
+  width: fit-content;
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
 }
-.container header .fa-solid { color: var(--white); }
-.container header .sign,
-.container header .register {
-  border-color: var(--white);
-  color: var(--white);
-}
-.container header .logo { color: var(--white); }
-.container header .logo .fa-solid { color: var(--white); }
 
-.container main { text-align: center; padding-block: 2rem; }
-
-/* Cart Items */
-section.main-cart {
-  max-width: 550px;
-  margin-inline: auto;
+.cart-empty-page {
+  text-align: center;
+  padding: 3rem 1rem;
+  color: #aaa;
+  font-family: 'Cairo', sans-serif;
+  font-size: 1rem;
 }
+.cart-empty-page i { font-size: 2.5rem; margin-bottom: 0.8rem; display: block; color: #ccc; }
+.cart-empty-page a { color: var(--buttonColor); font-weight: 700; }
+
+section.main-cart { margin-inline: auto; max-width: 500px; }
 
 article.proudct.flex {
   justify-content: space-between;
   align-items: center;
-  flex-wrap: wrap;
-  gap: 0.5rem;
+  max-width: 480px;
   font-weight: bold;
-  padding: 0.7rem 1rem;
+  margin-inline: auto;
+  padding: 0.6rem 0.8rem;
   margin-block: 0.8rem;
   border-top: 2px solid var(--buttonColor);
-  border-radius: 6px;
-  background-color: var(--white);
-  box-shadow: 0 2px 6px rgba(0,0,0,0.1);
-  text-align: right;
+  border-radius: 4px;
+  box-shadow: 0px 2px 1px -1px rgba(0,0,0,0.2),
+              0px 1px 1px 0px rgba(0,0,0,0.14),
+              0px 1px 3px 0px rgba(0,0,0,0.12);
+  background: var(--white);
+  gap: 0.5rem;
 }
-
-article.proudct img { width: 55px; height: 55px; object-fit: cover; border-radius: 4px; }
-
-article.proudct .proudct-name { font-size: 0.95rem; flex: 1; text-align: right; padding-inline: 0.5rem; }
 
 article.proudct .stock {
   background-color: var(--buttonColor);
   color: var(--white);
   border-radius: 50%;
-  min-width: 26px;
-  height: 26px;
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  font-size: 0.85rem;
+  padding: 0 0.4rem;
+  text-align: center;
+  font-size: 0.88rem;
+  min-width: 24px;
+  text-align: center;
 }
 
-article.proudct .price { font-size: 0.9rem; color: var(--numberColor); white-space: nowrap; }
-
-article.proudct .plus,
-article.proudct .minus {
-  padding: 0.2rem 0.4rem;
-  border: 1px solid #ddd;
-  border-radius: 4px;
+.proudct-name {
+  font-family: 'Cairo', sans-serif;
+  font-size: 0.88rem;
+  font-weight: 700;
+  flex: 1;
+  text-align: right;
 }
 
-/* Clear button */
+.cart-actions {
+  margin: 1rem auto;
+  width: fit-content;
+}
+
 button.claer {
-  display: flex;
-  align-items: center;
-  gap: 0.4rem;
   background-color: var(--redButton);
   color: var(--white);
-  padding: 0.4rem 1rem;
-  border-radius: 6px;
-  font-size: 0.85rem;
-  margin: 1rem auto 0;
+  border-radius: 4px;
+  padding: 6px 12px;
+  font-size: 0.82rem;
+  font-family: 'Cairo', sans-serif;
+  font-weight: 600;
+  cursor: pointer;
+  display: inline-flex;
+  align-items: center;
+  gap: 0.4rem;
 }
-button.claer:hover { background-color: #c0392b; }
+button.claer:hover { background-color: #b71c1c; }
 
-/* Summary Box */
 section.summary {
   background-color: var(--white);
-  box-shadow: 0 2px 8px rgba(0,0,0,0.12);
-  margin-top: 2rem;
+  box-shadow: 0px 2px 1px -1px rgba(0,0,0,0.2),
+              0px 1px 1px 0px rgba(0,0,0,0.14),
+              0px 1px 3px 0px rgba(0,0,0,0.12);
+  margin-top: 1.5rem;
   margin-inline: auto;
-  width: 100%;
-  max-width: 280px;
+  width: 260px;
   border-radius: 8px;
   overflow: hidden;
   text-align: right;
-}
-section.summary h1 {
-  font-size: 1.1rem;
-  padding: 0.6rem 0.8rem;
-  border-bottom: 2px solid rgba(0,0,0,0.08);
-}
-section.summary .sup {
-  display: flex;
-  justify-content: space-between;
-  align-items: center;
-  padding: 0.6rem 0.8rem;
-  font-size: 0.95rem;
-}
-section.summary .check {
-  display: block;
-  width: 100%;
-  background-color: var(--buttonColor);
-  color: var(--white);
-  padding: 0.6rem;
-  text-align: center;
-  font-size: 0.9rem;
-  font-weight: bold;
-}
-section.summary a {
-  display: block;
-  padding: 0.5rem;
-  color: var(--redButton);
-  font-size: 0.88rem;
-  text-align: center;
-}
+  padding: 0.8rem 1rem 1.2rem;
 
-/* =====================
-     Responsive
-======================== */
-@media (max-width: 480px) {
-  section.main-cart { max-width: 100%; }
-  article.proudct.flex { padding: 0.5rem 0.5rem; }
-  article.proudct .proudct-name { font-size: 0.85rem; }
+  & h1 {
+    font-size: 1.1rem;
+    font-family: 'Cairo', sans-serif;
+    padding-bottom: 0.5rem;
+    margin-bottom: 0.5rem;
+    border-bottom: 2px solid rgba(0,0,0,0.08);
+  }
+  & .sup {
+    margin-block: 0.4rem;
+    justify-content: space-between;
+    font-family: 'Cairo', sans-serif;
+    font-size: 0.88rem;
+  }
+  & .sup span { font-weight: 700; }
+  & .total-line p, & .total-line span { font-size: 1rem; color: var(--numberColor); }
+
+  & .check {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 0.4rem;
+    background-color: var(--buttonColor);
+    color: var(--white);
+    width: 100%;
+    padding-block: 0.6rem;
+    border-radius: 6px;
+    font-size: 0.88rem;
+    font-weight: 700;
+    font-family: 'Cairo', sans-serif;
+    margin-top: 0.8rem;
+    cursor: pointer;
+  }
+  & .check:hover { background-color: #1565c0; }
+  & a {
+    display: block;
+    padding-top: 0.5rem;
+    color: var(--redButton);
+    font-size: 0.82rem;
+    font-family: 'Cairo', sans-serif;
+    text-align: center;
+  }
 }
