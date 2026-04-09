@@ -4,139 +4,136 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <link rel="shortcut icon" href="/images/bag-shopping-solid.svg" type="image/x-icon">
+  <link rel="shortcut icon" href="./images/bag-shopping-solid.svg" type="image/x-icon">
   <link rel="stylesheet" href="css/main.css" />
   <link rel="stylesheet" href="css/header.css">
   <link rel="stylesheet" href="css/pages/index.css">
   <link rel="stylesheet" href="css/pages/footer.css">
+  <link rel="stylesheet" href="css/cart-drawer.css">
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.6.0/css/all.min.css"
     integrity="sha512-Kc323vGBEqzTmouAECnVceyQqyqdsSiqLQISBL29aUW4U/M7pSPA/gEUZQqv1cwx4OnYxTxve5UMg5GT6L4JJg=="
     crossorigin="anonymous" referrerpolicy="no-referrer" />
-  <link rel="preconnect" href="https://fonts.googleapis.com">
-  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-  <link href="https://fonts.googleapis.com/css2?family=Cairo:wght@400;600;700&display=swap" rel="stylesheet">
-  <style>body, * { font-family: 'Cairo', sans-serif; }</style>
-  <title>الحديدي | متجر إلكتروني</title>
+  <title>متجر الحديدي</title>
 </head>
 
 <body>
+
   <div class="top-img">
     <header id="head" class="flex">
       <div class="logo">
         <i class="fa-solid fa-bag-shopping"></i>
         <span>الحديدي</span>
-        <p>تسوق</p>
+        <p>شوبينج</p>
       </div>
       <div class="links">
-        <a href="/pages/Cart.html" class="cart"><i class="fa-solid fa-cart-shopping"></i>
-          ج.م 0.00<span class="proudct-number">2</span>
-          <a href="./pages/signin.html" class="sign"><i class="fa-solid fa-right-to-bracket"></i>تسجيل الدخول</a>
-          <a href="./pages/register.html" class="register"><i class="fa-solid fa-user-plus"></i>إنشاء حساب</a>
+        <button class="cart" id="cart-btn" onclick="openCart()">
+          <i class="fa-solid fa-cart-shopping"></i>
+          <span id="header-total">0.00 ج.م</span>
+          <span class="proudct-number" id="header-count">0</span>
+        </button>
+        <a href="./pages/signin.html" class="sign"><i class="fa-solid fa-right-to-bracket"></i>تسجيل الدخول</a>
+        <a href="./pages/register.html" class="register"><i class="fa-solid fa-user-plus"></i>إنشاء حساب</a>
       </div>
     </header>
+
     <section class="content">
-      <div class="lifestyle">مجموعة لايف ستايل</div>
+      <div class="lifestyle">مجموعة الموضة</div>
       <div class="men">رجالي</div>
-      <div class="sale">خصم يصل إلى <span>30%</span></div>
-      <div class="get-free">شحن مجاني على الطلبات فوق <span>499 ج.م</span></div>
-      <button>تسوق الآن</button>
+      <div class="sale">خصم يصل إلى
+        <span>30%</span>
+      </div>
+      <div class="get-free">شحن مجاني على الطلبات فوق
+        <span>99.00 ج.م</span>
+      </div>
+      <button onclick="document.getElementById('products-section').scrollIntoView({behavior:'smooth'})">تسوق الآن</button>
     </section>
   </div>
 
-  <main>
+  <!-- قسم إضافة منتج -->
+  <section class="add-product-section" id="add-section">
+    <div class="add-product-inner">
+      <h2><i class="fa-solid fa-circle-plus"></i> إضافة منتج جديد</h2>
+      <p class="add-sub">أضف منتجاتك للمتجر بسهولة من هنا</p>
+      <div class="add-form-grid">
+        <div class="form-grp">
+          <label>اسم المنتج *</label>
+          <input type="text" id="inp-name" placeholder="مثال: حذاء رياضي" />
+        </div>
+        <div class="form-grp">
+          <label>السعر (ج.م) *</label>
+          <input type="number" id="inp-price" placeholder="250" min="1" />
+        </div>
+        <div class="form-grp">
+          <label>الفئة</label>
+          <select id="inp-cat">
+            <option value="عام">عام</option>
+            <option value="أحذية">أحذية</option>
+            <option value="حقائب">حقائب</option>
+            <option value="ملابس">ملابس</option>
+            <option value="إكسسوارات">إكسسوارات</option>
+            <option value="أحزمة">أحزمة</option>
+            <option value="قبعات">قبعات</option>
+            <option value="نظارات">نظارات</option>
+            <option value="محافظ">محافظ</option>
+          </select>
+        </div>
+        <div class="form-grp">
+          <label>وصف المنتج</label>
+          <input type="text" id="inp-desc" placeholder="وصف مختصر للمنتج" />
+        </div>
+        <div class="form-grp">
+          <label>رابط الصورة (URL)</label>
+          <input type="url" id="inp-img-url" placeholder="https://..." oninput="previewFromUrl(this.value)" />
+          <div class="img-preview-box" id="url-preview">
+            <span><i class="fa-regular fa-image"></i> معاينة الصورة</span>
+          </div>
+        </div>
+        <div class="form-grp">
+          <label>أو ارفع صورة من جهازك</label>
+          <input type="file" id="inp-img-file" accept="image/*" onchange="previewFromFile(this)" />
+        </div>
+      </div>
+      <button class="btn-submit-product" onclick="addProduct()">
+        <i class="fa-solid fa-plus"></i> إضافة المنتج
+      </button>
+    </div>
+  </section>
+
+  <main id="products-section">
     <h1 class="recommended"><i class="fa-solid fa-check"></i> موصى به لك</h1>
-    <section class="proudcts flex">
-      <article class="card">
-        <a href="./pages/products-detels .html" target="_blank"><img src="./images/1.png" alt="منتج"></a>
-        <div class="content">
-          <h1 class="title">اسم المنتج</h1>
-          <p class="descrption">وصف مختصر للمنتج يوضح مميزاته وجودته العالية.</p>
-          <div class="flex">
-            <div class="price">100 ج.م</div>
-            <button class="flex"><i class="fa-solid fa-cart-plus"></i> أضف للسلة</button>
-          </div>
-        </div>
-      </article>
-      <article class="card">
-        <a href="./pages/products-detels .html" target="_blank"><img src="./images/2.webp" alt="منتج"></a>
-        <div class="content">
-          <h1 class="title">اسم المنتج</h1>
-          <p class="descrption">وصف مختصر للمنتج يوضح مميزاته وجودته العالية.</p>
-          <div class="flex">
-            <div class="price">100 ج.م</div>
-            <button class="flex"><i class="fa-solid fa-cart-plus"></i> أضف للسلة</button>
-          </div>
-        </div>
-      </article>
-      <article class="card">
-        <a href="./pages/products-detels .html" target="_blank"><img src="./images/3.webp" alt="منتج"></a>
-        <div class="content">
-          <h1 class="title">اسم المنتج</h1>
-          <p class="descrption">وصف مختصر للمنتج يوضح مميزاته وجودته العالية.</p>
-          <div class="flex">
-            <div class="price">100 ج.م</div>
-            <button class="flex"><i class="fa-solid fa-cart-plus"></i> أضف للسلة</button>
-          </div>
-        </div>
-      </article>
-      <article class="card">
-        <a href="./pages/products-detels .html" target="_blank"><img src="./images/4.webp" alt="منتج"></a>
-        <div class="content">
-          <h1 class="title">اسم المنتج</h1>
-          <p class="descrption">وصف مختصر للمنتج يوضح مميزاته وجودته العالية.</p>
-          <div class="flex">
-            <div class="price">100 ج.م</div>
-            <button class="flex"><i class="fa-solid fa-cart-plus"></i> أضف للسلة</button>
-          </div>
-        </div>
-      </article>
-      <article class="card">
-        <a href="./pages/products-detels .html" target="_blank"><img src="./images/5.webp" alt="منتج"></a>
-        <div class="content">
-          <h1 class="title">اسم المنتج</h1>
-          <p class="descrption">وصف مختصر للمنتج يوضح مميزاته وجودته العالية.</p>
-          <div class="flex">
-            <div class="price">100 ج.م</div>
-            <button class="flex"><i class="fa-solid fa-cart-plus"></i> أضف للسلة</button>
-          </div>
-        </div>
-      </article>
-      <article class="card">
-        <a href="./pages/products-detels .html" target="_blank"><img src="./images/6.webp" alt="منتج"></a>
-        <div class="content">
-          <h1 class="title">اسم المنتج</h1>
-          <p class="descrption">وصف مختصر للمنتج يوضح مميزاته وجودته العالية.</p>
-          <div class="flex">
-            <div class="price">100 ج.م</div>
-            <button class="flex"><i class="fa-solid fa-cart-plus"></i> أضف للسلة</button>
-          </div>
-        </div>
-      </article>
-      <article class="card">
-        <a href="./pages/products-detels .html" target="_blank"><img src="./images/7.webp" alt="منتج"></a>
-        <div class="content">
-          <h1 class="title">اسم المنتج</h1>
-          <p class="descrption">وصف مختصر للمنتج يوضح مميزاته وجودته العالية.</p>
-          <div class="flex">
-            <div class="price">100 ج.م</div>
-            <button class="flex"><i class="fa-solid fa-cart-plus"></i> أضف للسلة</button>
-          </div>
-        </div>
-      </article>
-      <article class="card">
-        <a href="./pages/products-detels .html" target="_blank"><img src="./images/8.png" alt="منتج"></a>
-        <div class="content">
-          <h1 class="title">اسم المنتج</h1>
-          <p class="descrption">وصف مختصر للمنتج يوضح مميزاته وجودته العالية.</p>
-          <div class="flex">
-            <div class="price">100 ج.م</div>
-            <button class="flex"><i class="fa-solid fa-cart-plus"></i> أضف للسلة</button>
-          </div>
-        </div>
-      </article>
-    </section>
+    <div class="filter-bar" id="filter-bar">
+      <button class="filter-btn active" onclick="filterProducts('الكل', this)">الكل</button>
+    </div>
+    <section class="proudcts flex" id="products-grid"></section>
   </main>
-  <footer>تصميم وتطوير <span>أحمد الحديدي</span> © 2024</footer>
+
+  <footer>صُمم وطُوِّر بواسطة <span>أحمد الحديدي</span> © 2024</footer>
+
+  <!-- Cart Drawer -->
+  <div class="cart-overlay" id="cart-overlay" onclick="closeCart()"></div>
+  <div class="cart-drawer" id="cart-drawer">
+    <div class="cart-drawer-header">
+      <h2><i class="fa-solid fa-cart-shopping"></i> سلة المشتريات</h2>
+      <button class="btn-close-cart" onclick="closeCart()"><i class="fa-solid fa-xmark"></i></button>
+    </div>
+    <div class="cart-drawer-body" id="cart-body">
+      <div class="cart-empty-state">
+        <i class="fa-solid fa-cart-shopping"></i>
+        <p>السلة فارغة</p>
+      </div>
+    </div>
+    <div class="cart-drawer-footer" id="cart-footer" style="display:none;">
+      <div class="cart-row"><span>المجموع الفرعي</span><strong id="cart-subtotal">0 ج.م</strong></div>
+      <div class="cart-row"><span>الشحن</span><strong id="cart-shipping">مجاني</strong></div>
+      <div class="cart-row total-row"><span>الإجمالي</span><strong id="cart-grand-total">0 ج.م</strong></div>
+      <button class="btn-checkout"><i class="fa-solid fa-lock"></i> إتمام الشراء</button>
+      <button class="btn-clear" onclick="clearCart()"><i class="fa-solid fa-trash-can"></i> إفراغ السلة</button>
+    </div>
+  </div>
+
+  <div class="toast-msg" id="toast"><span id="toast-text"></span></div>
+
+  <script src="js/main.js"></script>
+  <script src="js/store.js"></script>
 </body>
-<script src="js/main.js"></script>
 </html>
